@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { createPortal, createRoot } from 'react-dom/client';
+import { createPortal } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Bell, BookOpen, CalendarDays, CheckCircle2, ChevronRight, ClipboardCheck, Clock3, Download, GraduationCap, LayoutDashboard, LogIn, Menu, ReceiptText, Search, ShieldCheck, Sparkles, Users, X } from 'lucide-react';
 import './styles.css';
 
