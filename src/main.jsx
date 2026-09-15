@@ -12,7 +12,7 @@ const notices = [
   ['PTA meeting', 'Parents and guardians are invited on Saturday, 1 June at 10:00 AM.', 'Community']
 ];
 
-function Crest({ small = false }) { return <div className={`crest ${small ? 'small' : ''}`}><GraduationCap size={small ? 20 : 30}/><span>MIC</span></div> }
+function Crest({ small = false }) { return <div className={`crest ${small ? 'small' : ''}`}><img src="/maverick-logo.png" alt="Maverick International College logo"/></div> }
 function App() {
   const [page, setPage] = useState('home'); const [menu, setMenu] = useState(false); const [role, setRole] = useState('Student');
   const openPortal = (selected='Student') => { setRole(selected); setPage('portal'); window.scrollTo(0,0) };
