@@ -5,6 +5,9 @@ This folder contains the first invite-only school portal schema. It is a pilot f
 ## Included in this migration
 
 - Role-backed profiles for the ten school roles, with low-privilege student as the default.
+- Self-service preferred name, contact email, phone and private profile photos for every account role. Users can update only their own profile fields; account roles remain administrator-controlled.
+- Private profile-photo storage limited to each owner's folder. Authorized school administrators can view stored photos.
+- Self-service preferred name, contact email, phone and private profile photos for every account role. Profile updates cannot change account roles; photo objects are private and scoped to the owner's folder.
 - Classes, subjects and staff teaching/form-teacher assignments.
 - Student records with permanent ID format `MAV/{J1|J2|J3|S1|S2|S3}/9NN`. The final two digits are the entry order; for example, `MAV/J2/901` is the first entry in J2.
 - Parent accounts and explicit parent-to-student links.
@@ -15,12 +18,14 @@ This folder contains the first invite-only school portal schema. It is a pilot f
 
 Medical, financial, result and certificate records are intentionally out of this first schema. Add those only after their retention rules, access groups and approval workflows are agreed and separately reviewed.
 
+The contact email is separate from the Supabase sign-in email. Updating the sign-in email requires Supabase Auth's email verification flow.
+
 ## Connect a hosted project
 
 1. Create a Supabase project owned by the school. Do not send database passwords, secret keys or service-role keys in chat.
 2. In the project dashboard, open **Project Settings → API Keys** and copy the project URL and the `publishable` key.
 3. Copy `.env.example` to `.env.local`, then set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`. These browser-exposed values are not database passwords; RLS is the authorization boundary.
-4. Apply `migrations/20261002000000_school_pilot.sql` in the project’s SQL editor, after reviewing it with the school’s project owner. Alternatively, install the Supabase CLI, authenticate with `npx supabase login`, link this folder using `npx supabase link --project-ref YOUR_PROJECT_REF`, and deploy with `npx supabase db push`.
+4. Apply the files in `migrations/` in timestamp order in the project’s SQL editor, after reviewing them with the school’s project owner. Alternatively, install the Supabase CLI, authenticate with `npx supabase login`, link this folder using `npx supabase link --project-ref YOUR_PROJECT_REF`, and deploy with `npx supabase db push`.
 5. Keep public sign-ups disabled. Invite users through an authorized admin path. The profile creation trigger always assigns the `student` role; change privileged roles using the Supabase dashboard/SQL with an authorized school admin. Never allow a browser form to set its own role.
 6. Set the project Auth URL allow-list for the local site and eventual production domain. Configure the project password strength policy and email sender before sending recovery links to users.
 7. Restart the Vite dev server after creating `.env.local`.
