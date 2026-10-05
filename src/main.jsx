@@ -44,6 +44,13 @@ const publicPages = {
 };
 const PORTAL_LOGIN_URL='https://maverick-international-college-port.vercel.app/login';
 const loginRoleForPortal=role=>role==='Student'?'student':role==='Parent'?'parent':role==='Teacher'||role==='Form Teacher'?'teacher':'admin';
+// Supabase dashboard invitations use the project's Site URL when no redirect URL
+// is supplied. Route invite/recovery callbacks arriving at `/` into the existing
+// password setup screen while preserving the auth tokens in the URL fragment.
+const authCallback = new URLSearchParams(window.location.hash.slice(1));
+if (window.location.pathname !== '/login' && ['invite','recovery'].includes(authCallback.get('type'))) {
+  window.history.replaceState({}, '', `/login?mode=reset&role=teacher${window.location.hash}`);
+}
 function App() {
   const [path, setPath] = useState(window.location.pathname.replace(/\/$/, '') || '/'); const [role, setRole] = useState(roleFromSlug(window.location.pathname.split('/')[2])); const [menu, setMenu] = useState(false); const [session, setSession] = useState(null); const [authReady, setAuthReady] = useState(!supabaseConfigured);
   const navigate = to => { const page = publicPages[to] || publicPages['/']; window.history.pushState({}, '', to); setPath(to); setMenu(false); window.scrollTo(0,0); document.title = page[0] + ' | Maverick International College'; };
