@@ -6,7 +6,7 @@ This folder contains the first invite-only school portal schema. It is a pilot f
 
 - Role-backed profiles for the ten school roles, with low-privilege student as the default.
 - Classes, subjects and staff teaching/form-teacher assignments.
-- Student records with permanent ID format `MIC/YYYY/NNNN`.
+- Student records with permanent ID format `MAV/{J1|J2|J3|S1|S2|S3}/9NN`. The final two digits are the entry order; for example, `MAV/J2/901` is the first entry in J2.
 - Parent accounts and explicit parent-to-student links.
 - Daily attendance with the requested statuses and correction restrictions.
 - Public, authenticated-community and staff announcements.
