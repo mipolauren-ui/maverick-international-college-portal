@@ -1,0 +1,55 @@
+.teacher-module-page .student-module-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(22px, 4vw, 34px);
+  text-align: left;
+}
+
+.teacher-module-page .feature-icon {
+  margin: 0 0 14px;
+}
+
+.teacher-module-page h2 {
+  margin: 5px 0 10px;
+  color: var(--blue);
+  font: 700 26px 'Playfair Display', Georgia, serif;
+}
+
+.teacher-module-page .student-module-card > p:not(.eyebrow) {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.teacher-module-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 720px;
+  margin: 18px 0;
+  padding: 13px 15px;
+  border: 1px solid #dfe8ef;
+  border-radius: 4px;
+  background: #f7fafc;
+  color: #496075;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.teacher-module-status svg {
+  flex: none;
+  color: var(--royal);
+}
+
+.teacher-module-page .secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 600px) {
+  .teacher-module-page .student-module-card {
+    padding: 20px;
+  }
+}

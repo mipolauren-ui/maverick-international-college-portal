@@ -17,6 +17,7 @@ This folder contains the first invite-only school portal schema. It is a pilot f
 - Public, authenticated-community and staff announcements.
 - Audit records for student, attendance and announcement changes.
 - Row-level policies that limit students to themselves, parents to linked children and teachers to assigned classes.
+- Teacher roster names are read from the student register; existing row-level policies limit teachers to assigned classes.
 
 Medical, financial, result and certificate records are intentionally out of this first schema. Add those only after their retention rules, access groups and approval workflows are agreed and separately reviewed.
 
