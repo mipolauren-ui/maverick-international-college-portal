@@ -10,6 +10,8 @@ This folder contains the first invite-only school portal schema. It is a pilot f
 - Self-service preferred name, contact email, phone and private profile photos for every account role. Profile updates cannot change account roles; photo objects are private and scoped to the owner's folder.
 - Classes, subjects and staff teaching/form-teacher assignments.
 - Student records with permanent ID format `MAV/{J1|J2|J3|S1|S2|S3}/9NN`. The final two digits are the entry order; for example, `MAV/J2/901` is the first entry in J2.
+- Administrator-only bulk student account setup, with per-student school-ID usernames and temporary surname-based passwords that must be changed on first sign-in.
+- Administrator-only student register fields for name, date of birth, parent/guardian name and phone, and religion.
 - Parent accounts and explicit parent-to-student links.
 - Daily attendance with the requested statuses and correction restrictions.
 - Public, authenticated-community and staff announcements.
@@ -29,6 +31,15 @@ The contact email is separate from the Supabase sign-in email. Updating the sign
 5. Keep public sign-ups disabled. Invite users through an authorized admin path. The profile creation trigger always assigns the `student` role; change privileged roles using the Supabase dashboard/SQL with an authorized school admin. Never allow a browser form to set its own role.
 6. Set the project Auth URL allow-list for the local site and eventual production domain. Configure the project password strength policy and email sender before sending recovery links to users.
 7. Restart the Vite dev server after creating `.env.local`.
+
+## Bulk student accounts
+
+1. Apply `migrations/20261005020000_student_account_setup.sql` to add student names and temporary-password state.
+2. Deploy the `create-student-accounts` Edge Function. It uses Supabase's server-side `SUPABASE_SERVICE_ROLE_KEY`; never copy that key into Vite environment variables or browser code.
+3. Sign in with the `super_admin` account and open **Students**. Enter accurate surnames and names for active records, save each field, and create accounts. Records without surnames remain pending and are not assigned accounts.
+4. Download the one-time CSV immediately and distribute each row privately. Usernames are the students' school IDs. Passwords follow `Surname@6`, with the first letter uppercased (for example, `Uzor@6`). The student must choose a permanent password at first sign-in.
+
+An Edge Function uses the service role only after verifying the caller's live session and administrator role. The migration adds a narrow student-name read/update grant for the administrator register, so do not grant broader table access to the browser.
 
 ## Vercel deployment
 
