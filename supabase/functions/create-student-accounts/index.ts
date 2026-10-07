@@ -42,10 +42,9 @@ Deno.serve(async (request) => {
   for (const student of eligible) {
     const studentId = student.student_number.trim().toUpperCase();
     const email = `${studentId.toLowerCase().replaceAll('/', '-')}@${loginDomain}`;
-    const passwordBase = `${student.surname.trim()[0].toUpperCase()}${student.surname.trim().slice(1).toLowerCase()}@6`;
-    // Supabase enforces a six-character minimum; pad short surnames (for example, Ani@6).
-    const temporaryPassword = passwordBase.length < 6 ? `${passwordBase}0` : passwordBase;
     const fullName = [student.given_name, student.middle_name, student.surname].filter(Boolean).join(' ').trim();
+    const passwordName = student.surname.trim().length < 4 && student.given_name?.trim() ? student.given_name.trim() : student.surname.trim();
+    const temporaryPassword = `${passwordName[0].toUpperCase()}${passwordName.slice(1).toLowerCase()}@6`;
     const { data: created, error: createError } = await admin.auth.admin.createUser({
       email, password: temporaryPassword, email_confirm: true,
       user_metadata: { full_name: fullName, must_change_password: true },
