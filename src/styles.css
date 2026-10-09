@@ -83,6 +83,21 @@ html{scroll-padding-top:92px}body{font-feature-settings:'ss01' on}.wrap{width:mi
 .admissions-page .detail-lead{grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:32px}
 .admissions-page .detail-lead>div,.admissions-page .admissions-promo{min-width:0}
 .admissions-promo{width:100%}.admissions-promo h3{max-width:100%;overflow-wrap:anywhere}
+.admissions-promo{padding:clamp(24px,3vw,42px)}.admissions-promo h3{font-size:clamp(27px,3vw,40px);line-height:1.08;letter-spacing:-.8px}.admissions-promo>p:not(.eyebrow){line-height:1.65;overflow-wrap:anywhere}.admissions-promo small{display:block;overflow-wrap:anywhere}
 @media(max-width:1200px) and (min-width:801px){.nav-links{gap:12px}.nav-group a{font-size:12px}.nav-login{padding:10px 11px;font-size:12px}.nav-login svg:first-child{display:none}}
 @media(max-width:800px){.admissions-page .detail-lead{grid-template-columns:1fr;gap:25px}}
 .hero-photo-overlay{background:linear-gradient(90deg,#f4f6f3 0%,#f4f6f3e8 10%,transparent 52%),linear-gradient(0deg,#0b223b70 0,transparent 38%)}
+/* OODA pass: keep the real student photo clear and prevent header overflow. */
+.hero h1{font-size:clamp(42px,4.4vw,56px)}
+.hero-photo{mix-blend-mode:normal;filter:saturate(.9) contrast(1.02) brightness(.98)}
+.hero-photo-overlay{background:linear-gradient(90deg,#f4f6f3b8 0%,#f4f6f380 12%,transparent 45%),linear-gradient(0deg,#0b223b55 0,transparent 38%)}
+.hero-image-frame{left:0;right:0;clip-path:polygon(11% 0,100% 0,100% 100%,0 100%,0 15%)}
+.hero-photo{object-position:center 24%}
+.hero-grid{grid-template-columns:1.12fr .88fr;gap:32px}
+.hero h1{max-width:650px}
+.nav-login{white-space:nowrap}
+.hero-image-orbit{display:none}
+.nav-links{gap:clamp(8px,1vw,16px)}.nav-group a,.nav-login{white-space:nowrap}
+@media(max-width:1200px) and (min-width:801px){.nav{gap:10px}.brand{flex:none}.nav-links{flex:1;min-width:0;justify-content:flex-end;gap:8px}.nav-links a{font-size:11px}.nav-login{padding:9px 10px;font-size:11px}}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr;gap:0}.hero h1{font-size:clamp(40px,8.8vw,58px)}.hero-image-frame{inset:0 -7% 0 7%}.hero-photo{object-position:center 30%}}
+@media(max-width:480px){.hero h1{font-size:clamp(38px,10vw,47px)}.hero-image-frame{inset:0 -9% 0 3%}}
