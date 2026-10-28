@@ -48,8 +48,34 @@
   gap: 6px;
 }
 
+.teacher-clock-panel { margin: 0 0 18px; }
+.teacher-clock-panel .panel-title > svg { color: var(--royal); }
+.teacher-clock-body { display: grid; grid-template-columns: minmax(150px,.65fr) minmax(240px,1fr) auto; align-items: center; gap: 20px; }
+.teacher-clock-current { display: grid; gap: 3px; }
+.teacher-clock-current small,.teacher-clock-current span { color: var(--muted); font-size: 10px; }
+.teacher-clock-current small { font-weight: 750; letter-spacing: .9px; }
+.teacher-clock-current strong { color: var(--blue); font-size: 28px; font-variant-numeric: tabular-nums; }
+.teacher-clock-status { display: flex; align-items: flex-start; gap: 10px; }
+.teacher-clock-status > div { display: grid; gap: 4px; }
+.teacher-clock-status b { color: var(--ink); font-size: 13px; }
+.teacher-clock-status small { color: var(--muted); font-size: 11px; line-height: 1.5; }
+.teacher-clock-indicator { width: 9px; height: 9px; margin-top: 4px; border-radius: 50%; background: #aab4c0; box-shadow: 0 0 0 4px #eff2f5; flex: none; }
+.teacher-clock-indicator.is-open { background: #1b9b72; box-shadow: 0 0 0 4px #e5f5ef; }
+.teacher-clock-indicator.is-complete { background: #5278a2; box-shadow: 0 0 0 4px #e9eff6; }
+.teacher-clock-body > button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 150px; }
+.teacher-clock-body > .teacher-clock-out { border-color: #d9e0e8; color: #45586d; }
+.teacher-clock-note { margin: 17px 0 0; padding-top: 13px; border-top: 1px solid #edf0f4; color: var(--muted); font-size: 11px; line-height: 1.6; }
+.teacher-clock-panel.compact { padding: 17px 19px; }
+.teacher-clock-panel.compact .panel-title { margin-bottom: 10px; }
+.teacher-clock-panel.compact .panel-title h3 { font-size: 14px; }
+.teacher-clock-panel.compact .teacher-clock-body { grid-template-columns: minmax(140px,.5fr) 1fr auto; gap: 14px; }
+.teacher-clock-panel.compact .teacher-clock-current strong { font-size: 22px; }
+.teacher-clock-panel.compact .teacher-clock-body > button { min-width: 125px; padding: 10px 13px; }
+
 @media (max-width: 600px) {
   .teacher-module-page .student-module-card {
     padding: 20px;
   }
+  .teacher-clock-body,.teacher-clock-panel.compact .teacher-clock-body { grid-template-columns: 1fr; gap: 14px; }
+  .teacher-clock-body > button { width: 100%; }
 }
