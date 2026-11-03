@@ -1,0 +1,136 @@
+/* Fidelity pass for the supplied Maverick Digital College product blueprint. */
+:root {
+  --blue: #102f5d;
+  --royal: #2474e8;
+  --ink: #173252;
+  --muted: #647790;
+  --line: #dce7f4;
+  --pale: #f3f8ff;
+  --gold: #d6aa45;
+}
+
+html, body, #root { width: 100%; min-width: 320px; overflow-x: clip; }
+body { background: #fff; color: var(--ink); }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+/* The public pages retain the school’s photography and crest, with the airy
+   pale-blue canvas, strong navy type, and bright-blue actions in the video. */
+header { background: #fffffffa; border-bottom-color: #e4edf8; }
+.nav { min-width: 0; }
+.nav-links, .nav-group { min-width: 0; }
+.nav-links a { white-space: normal; }
+.hero { background: linear-gradient(115deg,#f2f7ff 0%,#f8fbff 56%,#eaf3ff 100%); }
+.hero-grid { min-height: 570px; }
+.hero h1 { color: #102f5d; max-width: 625px; font-size: clamp(42px,4.7vw,62px); line-height: 1.08; letter-spacing: -1.8px; }
+.hero h1 i { color: #2474e8 !important; }
+.hero .lead { color: #536a86; }
+.hero-photo-overlay { background: linear-gradient(90deg,#f3f8ffe8 0%,#f3f8ff9c 13%,transparent 48%),linear-gradient(0deg,#102f5d55 0,transparent 38%); }
+.hero-image-frame { border-radius: 8px 78px 8px 8px; border: 8px solid #fff; box-shadow: 0 24px 64px #123c711f; }
+.art-card { border-radius: 10px; }
+.quick { border-radius: 12px; }
+.quick button { border-radius: 8px; color: var(--blue); }
+.home-feature h2, .home-cards h2, .cta h2 { color: #102f5d; }
+.home-feature h2 i { color: #2474e8 !important; }
+.home-cards { background: #f3f8ff; }
+.home-cards .cards article { border-radius: 10px; }
+.cta { border-radius: 12px; background: linear-gradient(110deg,#102f5d,#174b89); }
+.page-hero { background: linear-gradient(110deg,#eef5ff,#f8fbff 70%); }
+.page-hero h1 { color: #102f5d; }
+.primary, .nav-login { background: #2474e8; border-radius: 8px; }
+
+/* Portal shell: the blueprint's single school workspace, legible navigation,
+   simple blue selection state, compact metric cards and wider content area. */
+.portal { background: #f3f7fd; }
+.portal aside { background: #102f5d; border-right: 0; color: #fff; box-shadow: none; }
+.portal aside .brand, .portal aside .user { color: #fff; }
+.portal aside .brand em { color: #c7d8ef; }
+.portal aside .user { border: 1px solid #ffffff20; border-radius: 9px; background: #ffffff0d; }
+.portal aside .user small { color: #c1d1e7; }
+.side-nav button { color: #c6d7ef; border-radius: 7px; }
+.side-nav button.active { color: #fff; background: #2474e8; box-shadow: none; }
+.side-nav button:hover:not(.active) { color: #fff; background: #ffffff12; }
+.switcher { border-top-color: #ffffff24; }
+.switcher small { color: #a9bfdd; }
+.switcher button { color: #c6d7ef; }
+.switcher button.selected { color: #fff; background: #ffffff12; }
+.portal-main { min-width: 0; }
+.topbar { background: #fff; border-bottom-color: #e3ebf5; }
+.dashboard { min-width: 0; max-width: 1500px; }
+.dashboard-heading h1 { color: #102f5d; }
+.panel, .stat, .executive-metric { border: 1px solid #e0e9f4; border-radius: 10px; box-shadow: 0 4px 18px #173f6b08; }
+.panel-title h3 { color: #173252; }
+.stat { background: #fff; }
+.stat-icon, .feature-icon, .executive-metric-icon { border-radius: 8px; background: #e8f1ff; color: #2474e8; }
+.student-context-strip { border-radius: 10px; }
+.student-context-strip>span { background: #fff; }
+.student-class-badge { border-radius: 8px; background: #fff; }
+.student-dashboard-grid { gap: 15px; }
+.student-notice { border-top-color: #e9eff7; }
+
+/* CEO home follows the video: a concise welcome, real numbers, and school
+   operations at a glance. Keep absent records honest and visibly unconfigured. */
+.executive-dashboard { max-width: 1420px; }
+.executive-hero { min-height: 165px; padding: 25px 30px; border-radius: 10px; background: linear-gradient(110deg,#102f5d,#174b89); }
+.executive-hero:after { right: 15%; }
+.executive-badge { border-radius: 999px; }
+.executive-profile-link { border-radius: 8px; }
+.executive-session-strip { border-radius: 9px; }
+.executive-metric-grid { gap: 13px; }
+.executive-metric { min-height: 126px; border-radius: 9px; border-top: 3px solid #2474e8; }
+.executive-metric>b { color: #102f5d; }
+.executive-metric.is-unconfigured { border-top-color: #c8d5e6; background: #f9fbfe; }
+.executive-lower-grid { gap: 15px; }
+.executive-lower-grid .panel, .clock-history-table-panel, .clock-history-filters { border-radius: 10px; }
+
+/* The mobile views in the reference use a compact card stack and a fixed
+   four/five-item bottom bar. Prevent long public footer links from widening it. */
+footer { overflow: hidden; }
+.footer-grid { min-width: 0; }
+.footer-grid > * { min-width: 0; overflow-wrap: anywhere; }
+.footer-grid a, .footer-grid button { overflow-wrap: anywhere; }
+img { max-width: 100%; }
+
+@media (max-width: 1100px) {
+  .nav { gap: 12px; }
+  .nav-links { gap: 10px; }
+  .nav-group { gap: 8px; }
+  .nav-links a { font-size: 11px; }
+}
+@media (max-width: 800px) {
+  .nav-links.show { align-items: stretch; }
+  .hero-grid { min-height: 0; }
+  .hero-art { margin-inline: 0; }
+  .hero-image-frame { inset: 0 0 0 6%; }
+  .portal aside { display: none; }
+  .portal-main { width: 100%; margin-left: 0; padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+  .topbar { height: 64px; padding-inline: 16px; }
+  .dashboard { padding: 22px 16px 30px; }
+  .dashboard-heading { gap: 12px; }
+  .executive-hero { padding: 22px 18px; }
+  .executive-metric-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .footer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px 20px; }
+}
+@media (max-width: 540px) {
+  .wrap { width: calc(100% - 32px); }
+  .nav { width: calc(100% - 28px); }
+  .hero-grid { padding-top: 35px; }
+  .hero h1 { font-size: clamp(37px,10vw,49px); letter-spacing: -1.3px; }
+  .hero-art { min-height: 300px; height: 300px; }
+  .hero-image-frame { inset: 0; border-width: 5px; border-radius: 8px 48px 8px 8px; }
+  .home-feature { gap: 28px; }
+  .footer-grid { grid-template-columns: minmax(0,1fr); }
+  .executive-hero { border-radius: 9px; }
+  .executive-session-strip { grid-template-columns: minmax(0,1fr); }
+  .executive-session-strip>div { border-right: 0; border-bottom: 1px solid #e8edf1; }
+  .executive-session-strip>div:last-child { border-bottom: 0; }
+  .executive-metric-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .executive-metric { min-height: 126px; padding: 12px; }
+  .executive-metric>b { font-size: 21px; }
+  .executive-lower-grid { grid-template-columns: minmax(0,1fr); }
+  .student-context-strip { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .student-dashboard-grid { grid-template-columns: minmax(0,1fr); }
+  .student-quick-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

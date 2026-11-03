@@ -7,6 +7,7 @@ import './styles.css';
 import './executive.css';
 import './teacher.css';
 import './blueprint.css';
+import './blueprint-fidelity.css';
 
 const subjects = [
   ['English Language', '78', 'A'], ['Mathematics', '84', 'A'], ['Physics', '76', 'B'], ['Chemistry', '81', 'A'], ['Biology', '73', 'B']
