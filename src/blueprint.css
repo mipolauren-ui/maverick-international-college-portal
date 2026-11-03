@@ -291,3 +291,15 @@ footer { background: #08233f; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+.calendar-workspace { display: grid; gap: 18px; }
+.calendar-workspace .calendar-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px; }
+.calendar-workspace .calendar-add-panel,
+.calendar-workspace .calendar-event-list { padding: 20px; }
+.calendar-workspace .calendar-event-list table { min-width: 760px; }
+.calendar-workspace .calendar-event-list td:last-child { text-align: right; }
+@media (max-width: 640px) {
+  .calendar-workspace .calendar-form-grid { grid-template-columns: 1fr; }
+  .calendar-workspace .calendar-add-panel,
+  .calendar-workspace .calendar-event-list { padding: 15px; }
+}
