@@ -66,6 +66,14 @@ header { background: #fffffffa; border-bottom-color: #e4edf8; }
 .student-class-badge { border-radius: 8px; background: #fff; }
 .student-dashboard-grid { gap: 15px; }
 .student-notice { border-top-color: #e9eff7; }
+.teacher-account-form-panel { max-width: 1000px; }
+.teacher-account-form { gap: 16px; }
+.teacher-account-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px 18px; }
+.teacher-account-fields label { display: grid; align-content: start; gap: 7px; color: #405772; font-size: 12px; font-weight: 700; }
+.teacher-account-fields input { width: 100%; min-width: 0; min-height: 44px; padding: 11px 12px; border: 1px solid #d8e3ef; border-radius: 8px; background: #fbfdff; color: var(--ink); font: 500 13px 'DM Sans',sans-serif; }
+.teacher-account-fields label small { color: var(--muted); font-size: 10px; font-weight: 500; line-height: 1.5; }
+.teacher-photo-selected { display: flex; align-items: center; gap: 8px; color: #49617d; font-size: 11px; }
+.teacher-account-privacy { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
 
 /* CEO home follows the video: a concise welcome, real numbers, and school
    operations at a glance. Keep absent records honest and visibly unconfigured. */
@@ -130,6 +138,7 @@ img { max-width: 100%; }
   .student-context-strip { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .student-dashboard-grid { grid-template-columns: minmax(0,1fr); }
   .student-quick-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .teacher-account-fields { grid-template-columns: minmax(0,1fr); gap: 13px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
